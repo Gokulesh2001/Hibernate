@@ -2,24 +2,30 @@ package com.gokulesh.DemoHb;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class AppTest {
 
 	public static void main(String[] args) {
 		
-		Person gokulesh = new Person();
-		gokulesh.setId(101);
-		gokulesh.setName("gokul");
-		gokulesh.setGender("male");
+		Person person = new Person();
+		person.setId(102);
+		person.setName("venky");
+		person.setGender("male");
 		
 		
-		Configuration con = new Configuration();
+		Configuration con = new Configuration().configure().addAnnotatedClass(Person.class);
 		
 		SessionFactory sf = con.buildSessionFactory();
 		
 		Session session = sf.openSession();
-		session.save(gokulesh);
+	    
+		Transaction tx = session.beginTransaction();
+		
+		session.save(person);
+		
+		tx.commit();
 	}
 
 }
