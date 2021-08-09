@@ -10,8 +10,8 @@ public class AppTest {
 	public static void main(String[] args) {
 		
 		Person person = new Person();
-		person.setId(102);
-		person.setName("venky");
+		person.setId(105);
+		person.setName("sam");
 		person.setGender("male");
 		
 		

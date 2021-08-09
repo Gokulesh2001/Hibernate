@@ -1,13 +1,17 @@
 package com.gokulesh.DemoHb;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="person_table")
 public class Person 
 {
 	   @Id
 	   private int id;
+	   @Column(name="person_name")
 	   private String name;
 	   private String gender;
 	   
