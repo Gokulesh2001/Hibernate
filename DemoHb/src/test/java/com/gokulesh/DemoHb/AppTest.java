@@ -10,10 +10,6 @@ public class AppTest {
 	public static void main(String[] args) {
 		
 		Person person = new Person();
-		person.setId(105);
-		person.setName("sam");
-		person.setGender("male");
-		
 		
 		Configuration con = new Configuration().configure().addAnnotatedClass(Person.class);
 		
@@ -23,9 +19,12 @@ public class AppTest {
 	    
 		Transaction tx = session.beginTransaction();
 		
-		session.save(person);
 		
+		
+		person = (Person) session.get(Person.class, 107);
 		tx.commit();
+		
+		System.out.println(person);
 	}
 
 }
