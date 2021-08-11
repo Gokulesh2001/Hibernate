@@ -11,8 +11,7 @@ public class Person
 {
 	   @Id
 	   private int id;
-	   @Column(name="person_name")
-	   private String name;
+	   private PersonName name;
 	   private String gender;
 	   
 	   
@@ -22,10 +21,11 @@ public class Person
 		public void setId(int id) {
 			this.id = id;
 		}
-		public String getName() {
+		
+		public PersonName getName() {
 			return name;
 		}
-		public void setName(String name) {
+		public void setName(PersonName name) {
 			this.name = name;
 		}
 		public String getGender() {

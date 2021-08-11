@@ -9,7 +9,14 @@ public class AppTest {
 
 	public static void main(String[] args) {
 		
+		PersonName name = new PersonName();
+		name.setFname("Gokulesh");
+		name.setLname("K");
+		name.setMname("A");
 		Person person = new Person();
+		person.setId(105);
+		person.setName(name);
+		person.setGender("male");
 		
 		Configuration con = new Configuration().configure().addAnnotatedClass(Person.class);
 		
@@ -21,10 +28,10 @@ public class AppTest {
 		
 		
 		
-		person = (Person) session.get(Person.class, 107);
-		tx.commit();
+		 session.save(person);
+		 tx.commit();
 		
-		System.out.println(person);
+//		System.out.println(person);
 	}
 
 }
