@@ -12,7 +12,7 @@ public class AppTest {
 		Laptop laptop = new Laptop();
 		laptop.setLid(101);
 		laptop.setLname("Dell");
-		
+		//
 		Student s = new Student();
 		s.setName("Gokul");
 		s.setRollno(1);
